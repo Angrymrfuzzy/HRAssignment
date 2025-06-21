@@ -46,7 +46,8 @@ public class PersonSet implements PersonList
 	@Override
 	public String toString()
 	{
-		 String result = "";
+		StringBuilder result = new StringBuilder();
+		 
 		for (Person p : people) 
 		{
 			result += p.toString() + "\n";

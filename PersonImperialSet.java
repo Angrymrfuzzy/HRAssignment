@@ -15,9 +15,27 @@ public class PersonImperialSet extends PersonSet
 		//kg to pounds conversion
 		double weightInPounds = person.getWeight() * 2.20;
 		//new person instance with American stats
-		Person American = new Person(person.getName(), heightInInches, weightInPounds);
+		Person American = new Person
+		(person.getName(), heightInInches, weightInPounds);
 		
 		//reuse parents add method
 		super.add(American);
+	}
+	//to string override in this class to avoid confusion in personset
+	@Override
+	public String toString()
+	{
+		StringBuilder result = new StringBuilder();
+		
+		//imperial-specific header with format
+		result.append(String.format
+		("%-12s %-12s %-12s%n", "Name", "Height(in)", "Weight(lb)"));
+		for (person p ; getPeople())
+		{
+			//matching data formatting and spacing
+			result.append(String.format("%-12s %-12.2f %-12.2f%n",
+			p.getName(), o.getHeight(), p.getWeight()));
+		}
+		return result.toString();
 	}
 }
