@@ -54,6 +54,11 @@ public class PersonSet implements PersonList
 		}
 		return result;
 	}
+	//new helper method to give PersonOrderedSet access to list
+	protected ArrayList<Person> getPeople()
+	{
+		return people;
+	}
 }
 	
 	

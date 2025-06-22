@@ -77,5 +77,18 @@ public class Person
 		{
 			return false;
 		}
+		//needed interface for collection sorting 
+		
+		/*if i'm understanding correctly, this creates a 
+		new instance of the person class but one being sort of 
+		a container, in order to compare against itself.*/
+		public class Person implements Comparable<Person>
+		{
+			@Override
+			public int compareTo(Person other)
+			{
+				return this.name.compareToIgnoreCase(other.name);
+			}
+		}
 	}
 }
