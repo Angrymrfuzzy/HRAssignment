@@ -4,8 +4,9 @@
 // Assignment: HR
 // Purpose: more file reading practice.
 //practice implements, classes, inheritance, and composition
+
 public interface PersonList
 {
-	void add(Person guy);
+	void add(Person person);
 	Person get(int index);
 }

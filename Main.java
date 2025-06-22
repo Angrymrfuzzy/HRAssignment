@@ -55,6 +55,8 @@ public class Main
 			}
 		PersonSet personSet = new PersonSet();
 		PersonImperialSet imperialSet = new PersonImperialSet();
+		PersonOrderedSet orderedSet = new PersonOrderedSet();
+		
 		try
 		{
 			
@@ -74,8 +76,15 @@ public class Main
 				double weight = fileReader.nextDouble();
 				
 				Person person = new Person(name, height, weight);
-				imperialSet.add(person);
+				Person copy = new Person(name, height, weight);
+				
+				orderedSet.add(person);
+				
+				imperialSet.add(copy);
+				
 			}
+			System.out.println(orderedSet);
+			System.out.println(imperialSet);
 			
 			//Close your scanner!
 			fileReader.close();
@@ -84,8 +93,6 @@ public class Main
 		{
 			System.out.println("Error reading file");
 		}
-		
-		System.out.println(imperialSet);
 		/*try
 		{	
 			FileWriter fileWriterOrder = new FileWriter("outputfile.txt");

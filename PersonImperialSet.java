@@ -30,11 +30,11 @@ public class PersonImperialSet extends PersonSet
 		//imperial-specific header with format
 		result.append(String.format
 		("%-12s %-12s %-12s%n", "Name", "Height(in)", "Weight(lb)"));
-		for (person p ; getPeople())
+		for (Person p : getPeople())
 		{
 			//matching data formatting and spacing
 			result.append(String.format("%-12s %-12.2f %-12.2f%n",
-			p.getName(), o.getHeight(), p.getWeight()));
+			p.getName(), p.getHeight(), p.getWeight()));
 		}
 		return result.toString();
 	}

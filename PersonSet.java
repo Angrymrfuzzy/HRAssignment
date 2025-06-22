@@ -9,12 +9,8 @@ import java.util.ArrayList;
 
 public class PersonSet implements PersonList
 {
-	private ArrayList<Person> people;
+	private ArrayList<Person> people = new ArrayList<>();
 	
-	public PersonSet()
-	{
-		people = new ArrayList<>();
-	}
 	//overrides suggested by tutor to help in case of compiling error
 	@Override
 	public void add (Person peeps)
@@ -50,9 +46,9 @@ public class PersonSet implements PersonList
 		 
 		for (Person p : people) 
 		{
-			result += p.toString() + "\n";
+			result.append(p.toString()).append("\n");
 		}
-		return result;
+		return result.toString();
 	}
 	//new helper method to give PersonOrderedSet access to list
 	protected ArrayList<Person> getPeople()
