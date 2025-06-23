@@ -30,6 +30,7 @@ public class PersonImperialSet extends PersonSet
 		//imperial-specific header with format
 		result.append(String.format
 		("%-12s %-12s %-12s%n", "Name", "Height(in)", "Weight(lb)"));
+		
 		for (Person p : getPeople())
 		{
 			//matching data formatting and spacing

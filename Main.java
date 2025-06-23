@@ -74,12 +74,12 @@ public class Main
 				String name = fileReader.next();
 				double height = fileReader.nextDouble();
 				double weight = fileReader.nextDouble();
-				
+				//maing sure to make copies of data
 				Person person = new Person(name, height, weight);
 				Person copy = new Person(name, height, weight);
-				
+				//one for orderedSet
 				orderedSet.add(person);
-				
+				//one for imperialSet
 				imperialSet.add(copy);
 				
 			}
@@ -93,17 +93,32 @@ public class Main
 		{
 			System.out.println("Error reading file");
 		}
-		/*try
+		try
 		{	
-			FileWriter fileWriterOrder = new FileWriter("outputfile.txt");
-			fileWriterOrder.write("testing");
-			fileWriterOrder.close();
+			//imperial set file write
+			FileWriter imperialOut = new FileWriter
+			("hr_imperial_set_output.txt");
+			
+			imperialOut.write(imperialSet.toString());
+			
+			//ordered set file write
+			FileWriter orderedOut = new FileWriter
+			("hr_ordered_set_output.txt");
+			
+			orderedOut.write(orderedSet.toString()); 
+			//it works! (if you got here)
+			System.out.println(
+			"Imperial and Ordered sets successfully written to files.");
+			//close your scanner!
+			imperialOut.close();
+			orderedOut.close();
 		}
 		catch(IOException e)
 		{
 			e.printStackTrace();
 			System.out.println(e);
 			System.exit(1);
-		}*/
+		}
+		
 	}
 }
